@@ -1,0 +1,12 @@
+/* Agregar clases personalizadas para colores */
+.navbar-vue {
+  background-color: #40a075; /* Verde de Vue.js */
+}
+
+/* Ajuste de fondo para la ventana lateral */
+.offcanvas-header {
+  background-color: #2f8f64; /* Verde de Vue.js */
+}
+.offcanvas-body {
+  background-color: hsl(0, 0%, 98%); /* Verde de Vue.js */
+}
