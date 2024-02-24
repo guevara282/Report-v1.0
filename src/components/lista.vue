@@ -15,18 +15,17 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return { tiporeportes: [] };
   },
   created: function () {
-    this.consultartreporte();
+    this.consultartreportes();
   },
   methods: {
-    consultartreporte() {
-      fetch("http://localhost/reportphp/programas.php")
+    consultartreportes() {
+      fetch("http://localhost/reportphp/programas.php/?consultar=" + 2)
         .then((respuesta) => respuesta.json())
         .then((datosrespuesta) => {
           console.log(datosrespuesta);

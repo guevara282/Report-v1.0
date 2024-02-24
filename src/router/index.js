@@ -1,18 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/AF.vue";
+import lista from "../components/lista.vue";
 import general from "../components/general.vue";
+
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView
+    path: "/lista",
+    name: "lista",
+    component: lista
   },
   {
     path: "/general",
     name: "general",
     component: general
   },
+  
   {
     path: "/about",
     name: "about",

@@ -1,0 +1,19 @@
+.app-header {
+    background-color: #3aa676; /* Color verde, puedes cambiarlo según tu preferencia */
+    color: #fff; /* Color de texto blanco */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0; /* Añadido para asegurarse de que esté en la parte superior */
+    width: 100%; /* Añadido para que ocupe el ancho completo */
+  }
+  
+  button {
+    background-color: #ffffff00; /* Color azul, puedes cambiarlo según tu preferencia */
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }

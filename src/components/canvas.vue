@@ -1,12 +1,8 @@
 <template>
-  
   <div class="list-group">
-
-   <carreras/>
-    
+    <reportes />
   </div>
 </template>
-
 <script>
 import header from "@/components/header.vue";
 import reportes from "@/components/lista.vue";
@@ -21,8 +17,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.offcanvas-carreras {
-  width: 300px; /* Puedes ajustar este valor según tus necesidades */
-}
-</style>

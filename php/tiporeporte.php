@@ -15,7 +15,13 @@ $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])) {
-    $sqlreport = mysqli_query($conexionBD, "SELECT * FROM empleados WHERE id=" . $_GET["consultar"]);
+    $sqlreport = mysqli_query($conexionBD, "SELECT report_permisos.RPP_ID AS IDPREPORTE,report_user.RPU_ID AS IDUSER, report_user.RPU_USER AS USUARIO, report_programa.RPPRO_ID AS IDPROGRAMA, report_programa.RPPRO_NOMBRE AS PROGRAMA,report_treporte.RPT_ID AS IDTREPORTE ,report_treporte.RPT_NOMBRE AS REPORTE, report_treporte.RPT_NCORTO AS NCORTO
+    FROM report_permisos
+    INNER JOIN report_user ON report_permisos.RPP_IDU = report_user.RPU_ID
+    INNER JOIN report_programa ON report_permisos.RPP_IDP = report_programa.RPPRO_ID
+    INNER JOIN report_treporte ON report_permisos.RPP_TREPORT = report_treporte.RPT_ID
+    WHERE  report_user.RPU_ESTADO=1 AND report_programa.RPPRO_EST=1 AND report_permisos.RPP_EST=1 AND report_treporte.RPT_EST=1 AND report_user.RPU_ID= ? 
+    ORDER BY RPT_NCORTO ASC ;". $_GET["consultar"]);
     if (mysqli_num_rows($sqlreport) > 0) {
         $empleaados = mysqli_fetch_all($sqlreport, MYSQLI_ASSOC);
         echo json_encode($empleaados);
